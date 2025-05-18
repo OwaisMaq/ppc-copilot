@@ -9,7 +9,7 @@
   <meta name="keywords" content="amazon ppc, gpt ppc, ai advertising, amazon seller, ppc automation, roas, ppc co-pilot, amazon ads" />
 
   <link rel="icon" href="https://placehold.co/32x32/00727A/FFFFFF?text=PPC" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
@@ -17,21 +17,21 @@
     body {
       font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
-      background-color: #0A0F1A;
-      color: #E0E0E0;
+      background-color: #0A0F1A; /* Dark blue-gray background */
+      color: #E0E0E0; /* Light gray text for contrast */
     }
 
     .active-link {
-      color: #22d3ee !important;
+      color: #22d3ee !important; /* Bright cyan for active link */
       font-weight: 700;
-      background-color: rgba(34, 211, 238, 0.1);
+      background-color: rgba(34, 211, 238, 0.1); /* Subtle cyan background */
       border-radius: 6px;
     }
 
     .fade-up {
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
+      transform: translateY(20px); 
+      transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1); 
     }
 
     .fade-up.visible {
@@ -44,217 +44,228 @@
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(34, 211, 238, 0.3); }
+      50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(34, 211, 238, 0.6); }
     }
 
     .nav-link {
-      @apply text-gray-400 hover:text-cyan-300 px-3 py-2 rounded-md text-sm font-semibold transition-all duration-200 hover:bg-gray-700/50;
+      @apply text-gray-300 hover:text-cyan-300 px-3 py-2 rounded-md text-sm font-semibold transition-all duration-200 hover:bg-gray-700/50;
     }
 
     .nav-link-cta {
-      @apply bg-cyan-600/90 hover:bg-cyan-500 text-white;
+      @apply bg-cyan-600/90 hover:bg-cyan-500 text-white shadow-md hover:shadow-lg transition-all duration-200;
     }
 
     .cta-button {
-      @apply font-bold py-3.5 px-10 rounded-lg text-lg shadow-xl;
+      @apply font-bold py-3.5 px-10 rounded-lg text-lg shadow-xl transition-all duration-300 ease-in-out;
     }
 
     .cta-button-primary {
-      @apply bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-500 hover:from-cyan-600 hover:via-sky-600 hover:to-indigo-600 text-white;
+      @apply bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-600 hover:from-cyan-600 hover:via-sky-600 hover:to-indigo-700 text-white transform hover:scale-105;
     }
 
     .cta-button-secondary {
-      @apply bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400 hover:from-sky-500 hover:via-cyan-500 hover:to-teal-500 text-gray-900 font-extrabold;
+      @apply bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400 hover:from-sky-500 hover:via-cyan-500 hover:to-teal-500 text-gray-900 font-extrabold transform hover:scale-105;
     }
+    
+    /* Removed .challenge-card and .challenge-card-icon styles as the section is removed */
+
   </style>
 </head>
 <body class="antialiased">
 
-  <!-- NAVIGATION -->
   <nav class="bg-gray-900/70 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-lg">
     <div class="container mx-auto px-4 sm:px-6 py-2.5 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold text-white">PPC Co-Pilot</a>
+      <a href="#" class="text-xl font-bold text-white flex items-center">
+        <svg class="h-7 w-7 mr-2 text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3" />
+        </svg>
+        PPC Co-Pilot
+      </a>
       <div class="hidden md:flex items-center space-x-1">
-        <a href="#how-it-works" class="nav-link">How It Works</a>
-        <a href="#features" class="nav-link">Features</a>
         <a href="#signup" class="nav-link nav-link-cta px-4 py-1.5">Get Early Access</a>
       </div>
       <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-gray-300 p-1">
-          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button id="mobile-menu-button" class="text-gray-300 p-1 focus:outline-none" aria-label="Open menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
         </button>
       </div>
     </div>
     <div id="mobile-menu" class="md:hidden hidden bg-gray-800/95 backdrop-blur-md">
-      <a href="#how-it-works" class="block nav-link px-5 py-2.5 text-sm">How It Works</a>
-      <a href="#features" class="block nav-link px-5 py-2.5 text-sm">Features</a>
       <a href="#signup" class="block nav-link px-5 py-2.5 text-sm nav-link-cta mx-3 my-2 text-center">Get Early Access</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="pt-24 md:pt-32 pb-16 md:pb-24 relative bg-gradient-to-r from-[#0D1B32] via-[#003C4A] to-[#005A60]">
-    <div id="particles-js" class="absolute w-full h-full top-0 left-0 opacity-60"></div>
+  <header class="pt-32 md:pt-40 pb-24 md:pb-32 relative bg-gradient-to-br from-[#0D1B32] via-[#003C4A] to-[#005A60] overflow-hidden">
+    <div id="particles-js" class="absolute w-full h-full top-0 left-0 opacity-60 z-0"></div> 
     <div class="container mx-auto px-6 text-center relative z-10 fade-up">
-      <h1 class="text-4xl md:text-5xl font-black mb-4 leading-tight">
-        Unlock Peak PPC Performance <span class="text-cyan-400">with AI Automation.</span>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6 leading-tight text-white">
+        <span class="text-cyan-400">AI-Powered</span> Amazon PPC. <br class="hidden sm:block"/> Effortless Growth.
       </h1>
-      <p class="text-md sm:text-lg text-gray-300 mb-8 max-w-xl mx-auto">
-        PPC Co-Pilot: Maximize ROAS, slash wasted spend, and save hours every week.
+      <p class="text-md sm:text-lg text-gray-200 mb-10 max-w-lg mx-auto">
+        Let our intelligent Co-Pilot automate your Amazon ads for maximum ROAS and minimal effort.
       </p>
       <div>
-        <a href="#signup" class="cta-button cta-button-primary cta-button-hero">Join the Waitlist</a>
+        <a href="#signup" class="cta-button cta-button-primary cta-button-hero">Join the Waitlist & Get Beta Access</a>
       </div>
     </div>
   </header>
 
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="py-20 fade-up">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-10">Effortless PPC in 3 Steps</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div>
-          <h3 class="font-semibold text-xl mb-2">1. Connect</h3>
-          <p>Link your Amazon Ads account in seconds.</p>
-        </div>
-        <div>
-          <h3 class="font-semibold text-xl mb-2">2. Analyze</h3>
-          <p>Our AI finds real-time optimization opportunities.</p>
-        </div>
-        <div>
-          <h3 class="font-semibold text-xl mb-2">3. Automate</h3>
-          <p>Apply changes or let us handle the bidding.</p>
-        </div>
+  <section id="signup" class="py-20 lg:py-28 fade-up"> 
+    <div class="container mx-auto px-6">
+      <div class="max-w-xl mx-auto p-8 sm:p-10 bg-white/10 backdrop-blur-xl rounded-xl text-center shadow-2xl border border-white/20">
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Be First to Unlock AI PPC Power!</h2>
+        <p class="text-gray-200 mb-8 text-lg">
+          Join our exclusive waitlist for early beta access, special launch discounts, and expert Amazon PPC tips directly to your inbox.
+        </p>
+        <form action="#" method="POST" class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+          <input type="email" name="email" placeholder="Enter your email address" required
+                 class="w-full sm:flex-grow px-5 py-3.5 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-teal-400 focus:outline-none text-base" />
+          <button type="submit" class="cta-button cta-button-secondary text-base py-3.5 w-full sm:w-auto whitespace-nowrap">
+            Secure My Spot!
+          </button>
+        </form>
+        <p class="text-xs text-white/80 mt-5">🔒 Your email is safe with us. No spam, just valuable insights.</p>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section id="features" class="py-20 bg-gray-900 fade-up">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-white">AI-Driven Advantages</h2>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div><h4 class="font-semibold text-lg text-white">Smart Bidding</h4></div>
-        <div><h4 class="font-semibold text-lg text-white">Keyword Discovery</h4></div>
-        <div><h4 class="font-semibold text-lg text-white">Auto-Campaigns</h4></div>
-        <div><h4 class="font-semibold text-lg text-white">Insightful Reports</h4></div>
-        <div><h4 class="font-semibold text-lg text-white">Secure Data</h4></div>
-        <div><h4 class="font-semibold text-lg text-white">Mobile Access</h4></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIGNUP -->
-  <section id="signup" class="py-20 bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-500 fade-up">
-    <div class="max-w-xl mx-auto p-8 bg-white/10 backdrop-blur-lg rounded-xl text-center shadow-xl">
-      <h2 class="text-3xl font-black text-white mb-3">Be First to Unlock AI PPC Power!</h2>
-      <p class="text-gray-200 mb-6">Join our exclusive waitlist for early access, discounts & tips.</p>
-      <form action="#" method="POST" class="flex flex-col sm:flex-row gap-4 items-center justify-center">
-        <input type="email" name="email" placeholder="Enter your email" required
-               class="w-full sm:w-auto px-4 py-3 rounded-md text-gray-900" />
-        <button type="submit" class="cta-button cta-button-secondary text-base py-3 w-full sm:w-auto">
-          Get My Early Access!
-        </button>
-      </form>
-      <p class="text-xs text-white mt-4">🔒 Your email is safe. No spam, ever.</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 py-6 text-center text-gray-500 text-xs">
-    <p>&copy; <span id="currentYear"></span> PPC Co-Pilot. All rights reserved.</p>
+  <footer class="bg-gray-900 py-8 text-center text-gray-500 text-sm">
+    <p>&copy; <span id="currentYear"></span> PPC Co-Pilot. All rights reserved. Crafted with 💙 for Amazon Sellers.</p>
+    <p class="mt-1">
+        <a href="#" class="hover:text-cyan-400 transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-cyan-400 transition-colors">Terms of Service</a>
+    </p>
   </footer>
 
-  <!-- JS -->
   <script>
+    // Set current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const headerOffset = 70; // Approximate height of the fixed nav
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
       });
     });
 
-    // Mobile Menu
+    // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+        mobileMenuButton.setAttribute('aria-expanded', !expanded);
+      });
+      // Close mobile menu when a link is clicked
       mobileMenu.querySelectorAll('a').forEach(link =>
-        link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+        })
       );
     }
 
-    // Scroll Animations
+    // Intersection Observer for Fade-up Animations
     const faders = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver(entries => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1 // Trigger when 10% of the element is visible
+    };
+    const appearOnScrollObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          observer.unobserve(entry.target); // Stop observing after animation
         }
       });
-    }, { threshold: 0.2 });
-    faders.forEach(el => observer.observe(el));
+    }, observerOptions);
 
-    // ScrollSpy
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll("nav a[href^='#']");
+    faders.forEach(fader => {
+      appearOnScrollObserver.observe(fader);
+    });
+
+    // ScrollSpy for Active Navigation Link Highlighting
+    const sections = document.querySelectorAll("section[id]"); // Now only #signup
+    const navLinksToWatch = document.querySelectorAll("nav a[href^='#signup']"); // Only watch the #signup link
+
     function activateNavLink() {
-      let current = "";
+      let currentSectionId = "";
       const scrollY = window.pageYOffset;
-      sections.forEach(section => {
-        const top = section.offsetTop - 120;
-        const height = section.offsetHeight;
-        if (scrollY >= top && scrollY < top + height) {
-          current = section.getAttribute("id");
+      const navHeightOffset = 100; 
+
+      sections.forEach(section => { // Will only iterate over #signup
+        const sectionTop = section.offsetTop - navHeightOffset;
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute("id");
         }
       });
-      navLinks.forEach(link => {
+      
+      navLinksToWatch.forEach(link => {
         link.classList.remove("active-link");
-        if (link.getAttribute("href") === `#${current}`) {
+        if (link.getAttribute("href") === `#${currentSectionId}`) {
           link.classList.add("active-link");
         }
       });
     }
     window.addEventListener("scroll", activateNavLink);
+    window.addEventListener("load", activateNavLink);
 
-    // ParticlesJS Config
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 35, density: { enable: true, value_area: 900 } },
-        color: { value: "#737F96" },
-        shape: { type: "circle" },
-        opacity: {
-          value: 0.15, random: true,
-          anim: { enable: true, speed: 0.1, opacity_min: 0.03, sync: false }
-        },
-        size: { value: 2, random: true },
-        line_linked: {
-          enable: true, distance: 180, color: "#3E4C5E", opacity: 0.08, width: 1
-        },
-        move: {
-          enable: true, speed: 0.5, random: true,
-          straight: false, out_mode: "out", bounce: false
-        }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "grab" },
-          resize: true
-        },
-        modes: {
-          grab: { distance: 100, line_linked: { opacity: 0.3 } }
-        }
-      },
-      retina_detect: true
-    });
+    // ParticlesJS Configuration
+    if (document.getElementById('particles-js')) {
+        particlesJS('particles-js', {
+          particles: {
+            number: { value: 60, density: { enable: true, value_area: 700 } }, 
+            color: { value: "#737F96" },
+            shape: { type: "circle" },
+            opacity: {
+              value: 0.3, 
+              random: true,
+              anim: { enable: true, speed: 0.25, opacity_min: 0.08, sync: false }
+            },
+            size: { value: 3.5, random: true, anim: { enable: false } }, 
+            line_linked: {
+              enable: true, distance: 130, color: "#3E4C5E", opacity: 0.2, width: 1 
+            },
+            move: {
+              enable: true, speed: 0.8, direction: "none", random: true, 
+              straight: false, out_mode: "out", bounce: false
+            }
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: { enable: true, mode: "grab" },
+              onclick: { enable: false, mode: "push" },
+              resize: true
+            },
+            modes: {
+              grab: { distance: 150, line_linked: { opacity: 0.4 } }, 
+              bubble: { distance: 200, size: 3, duration: 2, opacity: 0.3 },
+              repulse: { distance: 100, duration: 0.4 },
+              push: { particles_nb: 4 },
+              remove: { particles_nb: 2 }
+            }
+          },
+          retina_detect: true
+        });
+    }
   </script>
 </body>
 </html>
