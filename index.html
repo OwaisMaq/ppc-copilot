@@ -1,79 +1,454 @@
-# Re-run code after kernel reset to regenerate the HTML file
-html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPC Co-Pilot | AI-Powered Amazon Ads Optimization</title>
+    <title>PPC Co-Pilot - AI Driven Amazon PPC Automation | Coming Soon!</title>
+
+    <meta name="description" content="Stop guessing, start growing. PPC Co-Pilot uses AI to automate & optimize your Amazon PPC campaigns for maximum ROAS. Early access coming soon!">
+    <meta name="keywords" content="amazon ppc, gpt ppc, ai advertising, amazon seller, ppc automation, roas, ppc co-pilot, amazon ads">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="PPC Co-Pilot - AI Driven Amazon PPC Automation | Coming Soon!">
+    <meta property="og:description" content="Stop guessing, start growing. PPC Co-Pilot uses AI to automate & optimize your Amazon PPC campaigns for maximum ROAS. Early access coming soon!">
+    <meta property="og:image" content="https://placehold.co/1200x630/0A0F1A/22D3EE?text=PPC+Co-Pilot+AI">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourdomain.com/">
+    <meta name="twitter:title" content="PPC Co-Pilot - AI Driven Amazon PPC Automation | Coming Soon!">
+    <meta name="twitter:description" content="Stop guessing, start growing. PPC Co-Pilot uses AI to automate & optimize your Amazon PPC campaigns for maximum ROAS. Early access coming soon!">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/0A0F1A/22D3EE?text=PPC+Co-Pilot+AI">
+
+    <link rel="icon" href="https://placehold.co/32x32/00727A/FFFFFF?text=PPC" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #f9f9f9;
-            color: #333;
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background-color: #0A0F1A; /* Deep dark blue background */
+            color: #E0E0E0; /* Light grey text for better contrast on dark bg */
         }
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #06B6D4, #6366F1); /* Brighter Cyan to Indigo */
         }
-        h1 {
-            color: #1a73e8;
+
+        .hero-bg {
+            position: relative;
+            background: linear-gradient(145deg, #0D1B32 0%, #003C4A 60%, #005A60 100%); /* Darker, more subtle hero gradient */
+            background-size: 150% 150%;
+            animation: gradientAnimation 25s ease infinite alternate;
+            overflow: hidden;
         }
-        .features {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.6; /* Slightly reduced particle opacity */
         }
-        .features ul {
-            padding-left: 1.2rem;
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
-        footer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: 2rem;
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
-        a.button {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.7rem 1.5rem;
-            background: #1a73e8;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
+
+        .feature-icon-container {
+            transition: transform 0.3s ease, box-shadow 0.4s ease; /* Smoother shadow transition */
+            @apply bg-gray-800/70 backdrop-blur-sm p-5 rounded-xl flex items-center justify-center mb-4 shadow-lg hover:shadow-cyan-500/30; /* Added backdrop blur and hover shadow */
+        }
+        .feature-icon-container:hover {
+            transform: translateY(-5px) scale(1.08); /* More pronounced hover */
+        }
+        .feature-icon {
+            width: 48px; /* Adjusted size */
+            height: 48px;
+            stroke-width: 1.5; /* Standard stroke */
+            @apply text-cyan-400;
+        }
+
+        .cta-button {
+            transition: all 0.3s ease-out; /* Ease-out for smoother end */
+            @apply font-bold py-3.5 px-10 rounded-lg text-lg shadow-xl;
+        }
+        .cta-button-primary {
+             @apply bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-500 hover:from-cyan-600 hover:via-sky-600 hover:to-indigo-600 text-white; /* New gradient */
+        }
+        .cta-button-primary:hover {
+            transform: translateY(-3px) scale(1.05); /* Slightly more lift */
+            box-shadow: 0 10px 20px rgba(34, 211, 238, 0.25), 0 0 30px rgba(99, 102, 241, 0.2); /* Dual color glow */
+        }
+        .cta-button-secondary { /* Signup button */
+            @apply bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400 hover:from-sky-500 hover:via-cyan-500 hover:to-teal-500 text-gray-900 font-extrabold; /* Brighter, distinct gradient for signup */
+        }
+        .cta-button-secondary:hover {
+             transform: translateY(-2px) scale(1.03);
+             box-shadow: 0 8px 20px rgba(14, 165, 233, 0.35); /* Sky blue glow */
+        }
+        .cta-button:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .nav-link {
+            @apply text-gray-400 hover:text-cyan-300 px-3 py-2 rounded-md text-sm font-semibold transition-all duration-200 hover:bg-gray-700/50; /* Added hover bg */
+        }
+        .nav-link-cta {
+             @apply bg-cyan-600/90 hover:bg-cyan-500 text-white;
+        }
+
+        .section-title {
+            @apply text-3xl md:text-4xl font-extrabold text-center mb-10 md:mb-14 text-gray-50; /* Brighter title */
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(35px); /* Slightly more travel */
+            transition: opacity 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55), transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Spring-like easing */
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .coming-soon-badge { /* For animating the whole badge */
+            animation: subtlePulseBadge 3s infinite ease-in-out;
+            display: inline-block; /* Needed for transform */
+        }
+        @keyframes subtlePulseBadge {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(34, 211, 238, 0.2); }
+            50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); }
+        }
+
+
+        .how-it-works-grid {
+            @apply grid md:grid-cols-3 gap-6 md:gap-8;
+        }
+        .how-it-works-step {
+            @apply flex flex-col items-center text-center bg-gray-800/60 backdrop-blur-md p-6 rounded-xl shadow-xl z-10 relative;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; /* Bouncy transition */
+        }
+        .how-it-works-step:hover {
+            transform: translateY(-8px) scale(1.03); /* More lift */
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+        .step-icon-container { /* Replaces step-number for icons */
+            @apply flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 text-white text-xl font-bold mb-5 shadow-lg;
+        }
+        .how-it-works-step-icon { /* Icons for how it works */
+            width: 32px;
+            height: 32px;
+            stroke-width: 2;
+        }
+
+        .feature-card {
+            @apply bg-gray-800/60 backdrop-blur-md p-6 rounded-xl shadow-xl text-center flex flex-col items-center;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            min-height: 180px;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+        .feature-card h4 {
+            @apply text-md font-semibold text-gray-100 mt-3 leading-tight;
+        }
+
+        /* Signup Section Enhancements */
+        #signup {
+            /* Intense gradient to draw focus */
+            background-image: linear-gradient(135deg, #06B6D4 0%, #3B82F6 50%, #8B5CF6 100%);
+            padding-top: 5rem; /* More padding */
+            padding-bottom: 5rem;
+        }
+        .signup-content-wrapper {
+            @apply bg-gray-900/50 backdrop-blur-lg p-8 md:p-12 rounded-xl shadow-2xl max-w-xl mx-auto; /* Inner card for content */
+        }
+        .signup-title {
+            @apply text-3xl md:text-4xl font-black mb-3 text-white; /* White title for contrast */
+        }
+        .signup-subtitle {
+            @apply text-md md:text-lg mb-6 text-gray-200;
+        }
+        .signup-form-container {
+            @apply flex flex-col sm:flex-row gap-3 items-center justify-center mb-6;
+        }
+        .signup-input {
+            @apply w-full sm:w-auto flex-grow px-5 py-3 border-2 border-transparent rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-cyan-300/50 focus:border-cyan-400 text-gray-900 text-base; /* Enhanced focus */
+        }
+        .signup-social-proof { @apply text-xs text-cyan-100 mb-4; }
+        .signup-privacy { @apply text-xs text-gray-300 mt-4; } /* Added margin top */
+
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 1.875rem; }
+            .hero-content p { font-size: 0.875rem; }
+            .section-title { font-size: 1.75rem; margin-bottom: 2rem; }
+            .feature-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem;}
+            .feature-card { min-height: auto; padding: 1rem;}
+            .feature-icon { width: 36px; height: 36px; }
+            .feature-card h4 { font-size: 0.875rem; }
+            .how-it-works-grid { grid-template-columns: 1fr; }
+            .step-icon-container { height: 3rem; width: 3rem; margin-bottom: 0.75rem;}
+            .how-it-works-step-icon { width: 24px; height: 24px;}
+            .how-it-works-step h3 { font-size: 1rem; }
+
+            #signup { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+            .signup-content-wrapper { padding: 1.5rem; }
+            .signup-title { font-size: 1.75rem; }
+            .signup-subtitle { font-size: 0.9rem; margin-bottom: 1rem; }
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>PPC Co-Pilot</h1>
-        <p><em>Your AI assistant for Amazon PPC success.</em></p>
+<body class="bg-gray-900 text-gray-100 antialiased">
+
+    <nav class="bg-gray-900/70 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 py-2.5 flex justify-between items-center">
+            <a href="#" class="text-lg sm:text-xl font-bold text-white flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2 text-cyan-400"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                PPC Co-Pilot
+            </a>
+            <div class="hidden md:flex items-center space-x-1">
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#signup" class="nav-link nav-link-cta px-4 py-1.5">Get Early Access</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none p-1">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800/95 backdrop-blur-md">
+            <a href="#how-it-works" class="block nav-link px-5 py-2.5 text-sm">How It Works</a>
+            <a href="#features" class="block nav-link px-5 py-2.5 text-sm">Features</a>
+            <a href="#signup" class="block nav-link px-5 py-2.5 text-sm nav-link-cta mx-3 my-2 text-center">Get Early Access</a>
+        </div>
+    </nav>
+
+    <header class="hero-bg text-white pt-24 md:pt-32 pb-16 md:pb-24 relative">
+        <div id="particles-js"></div>
+        <div class="container mx-auto px-6 text-center relative z-10 hero-content animate-on-scroll">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 leading-tight">
+                 Unlock Peak PPC Performance <span class="gradient-text">with AI Automation.</span>
+            </h1>
+            <p class="text-md sm:text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+                PPC Co-Pilot: Maximize ROAS, slash wasted spend, and save hours every week.
+            </p>
+            <div class="coming-soon-badge bg-white/10 backdrop-blur-sm p-1.5 rounded-lg mb-8">
+                <span class="text-lg md:text-xl font-bold text-white py-1.5 px-4 rounded-md shadow-lg">
+                    🚀 LAUNCHING SOON 🚀
+                </span>
+            </div>
+            <div>
+                <a href="#signup" class="cta-button cta-button-primary">
+                    Join the Waitlist
+                </a>
+            </div>
+        </div>
     </header>
-    <section class="features">
-        <h2>🚀 What We Do</h2>
-        <p>PPC Co-Pilot is an AI-powered platform designed to help Amazon sellers automate and optimize their Sponsored Ads campaigns using real-time performance data and GPT analysis.</p>
-        <ul>
-            <li>✅ AI-generated bid and keyword optimization suggestions</li>
-            <li>✅ Real-time campaign performance tracking</li>
-            <li>✅ One-click implementation of changes</li>
-            <li>✅ Weekly insights reports straight to your inbox</li>
-        </ul>
-        <a href="#" class="button">Coming Soon</a>
+
+    <section id="how-it-works" class="py-16 md:py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title animate-on-scroll">Effortless PPC in 3 Steps</h2>
+            <div class="how-it-works-grid">
+                <div class="how-it-works-step animate-on-scroll">
+                    <div class="step-icon-container">
+                        <svg class="how-it-works-step-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Secure Link</h3>
+                    <p class="text-gray-400 text-xs">Connect Amazon account instantly.</p>
+                </div>
+                <div class="how-it-works-step animate-on-scroll" style="transition-delay: 0.15s;">
+                    <div class="step-icon-container">
+                        <svg class="how-it-works-step-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1">AI Analysis</h3>
+                    <p class="text-gray-400 text-xs">GPT-4 finds optimization opportunities.</p>
+                </div>
+                <div class="how-it-works-step animate-on-scroll" style="transition-delay: 0.3s;">
+                    <div class="step-icon-container">
+                        <svg class="how-it-works-step-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56a16.985 16.985 0 00-2.63-.71m2.63.71a16.985 16.985 0 00-2.63-.71m0 0V9.74l5.56-3.32a16.985 16.985 0 00-2.63-.71m-5.56 3.32l4.34 2.58m0 0l4.34 2.58m-8.68-5.16l4.34-2.58m0 0l4.34-2.58m0 0l4.34 2.58m-4.34 2.58l-4.34 2.58m0 0l-4.34-2.58m0 0l-4.34-2.58m4.34 2.58V3.46M3.75 14.37M21.25 14.37m-17.5 0a3 3 0 116 0m-6 0a3 3 0 106 0M21.25 14.37a3 3 0 11-6 0m6 0a3 3 0 10-6 0M3.75 6.375a3 3 0 116 0m-6 0a3 3 0 106 0M21.25 6.375a3 3 0 11-6 0m6 0a3 3 0 10-6 0" /></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Automate Growth</h3>
+                    <p class="text-gray-400 text-xs">Apply changes or let AI manage.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer>
-        &copy; 2025 PPC Co-Pilot. All rights reserved.
+
+    <section id="features" class="py-16 md:py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title animate-on-scroll">AI-Driven Advantages</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 feature-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    </div>
+                    <h4>Smart Bidding</h4>
+                </div>
+                <div class="feature-card animate-on-scroll" style="transition-delay: 0.05s;">
+                    <div class="feature-icon-container">
+                         <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM13.5 10.5h-6" /></svg>
+                    </div>
+                    <h4>Keyword Discovery</h4>
+                </div>
+                <div class="feature-card animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-1.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
+                    </div>
+                    <h4>Auto-Campaigns</h4>
+                </div>
+                <div class="feature-card animate-on-scroll" style="transition-delay: 0.15s;">
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                    </div>
+                    <h4>Insightful Reports</h4>
+                </div>
+                <div class="feature-card animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="feature-icon-container">
+                         <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+                    </div>
+                    <h4>Secure Data</h4>
+                </div>
+                <div class="feature-card animate-on-scroll" style="transition-delay: 0.25s;">
+                    <div class="feature-icon-container">
+                        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75A2.25 2.25 0 0015.75 1.5m-7.5 0v16.5m-3-16.5H2.25m17.25 0H18M12 18.75a.375.375 0 100-.75.375.375 0 000 .75z" /></svg>
+                    </div>
+                    <h4>Mobile Access</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="signup" style="border: 5px dashed red !important;"> <div class="signup-content-wrapper"> <h2 class="signup-title">Be First to Unlock AI PPC Power!</h2>
+            <p class="signup-subtitle">
+                Join our exclusive waitlist for early access, special discounts, and insider tips.
+            </p>
+            <p class="signup-social-proof">
+                🚀 Over 500+ Amazon sellers already signed up!
+            </p>
+            <form action="#" method="POST" class="max-w-lg mx-auto">
+                <div class="signup-form-container">
+                    <label for="email-address" class="sr-only">Email address</label>
+                    <input id="email-address" name="email" type="email" autocomplete="email" required
+                        class="signup-input"
+                        placeholder="Enter your email address">
+                    <button type="submit"
+                        class="cta-button cta-button-secondary w-full sm:w-auto text-base py-3">
+                        Get My Early Access!
+                    </button>
+                </div>
+            </form>
+            <p class="signup-privacy">Your privacy is important. No spam, ever.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900/70 border-t border-gray-700/30">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600 text-xs">
+            <p>&copy; <span id="currentYear"></span> PPC Co-Pilot. AI-Driven Amazon Ads.</p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Basic Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden'); // Hide menu after click on mobile
+                });
+            });
+        }
+
+        // Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+        const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+        const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+        elementsToAnimate.forEach(el => scrollObserver.observe(el));
+
+        // Particles.js Configuration
+        if (document.getElementById('particles-js')) {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {"value": 50, "density": {"enable": true, "value_area": 900}},
+                    "color": {"value": "#737F96"},
+                    "shape": {"type": "circle"},
+                    "opacity": {
+                        "value": 0.25, "random": true,
+                        "anim": {"enable": true, "speed": 0.1, "opacity_min": 0.03, "sync": false}
+                    },
+                    "size": {"value": 2, "random": true},
+                    "line_linked": {
+                        "enable": true, "distance": 180, "color": "#3E4C5E", "opacity": 0.1, "width": 1
+                    },
+                    "move": {
+                        "enable": true, "speed": 0.8, "direction": "none", "random": true,
+                        "straight": false, "out_mode": "out", "bounce": false
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {"enable": true, "mode": "grab"},
+                        "onclick": {"enable": false},
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {"distance": 100, "line_linked": {"opacity": 0.3}},
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+    </script>
+
 </body>
 </html>
-"""
-
-# Save the HTML file
-file_path = "/mnt/data/index.html"
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-file_path
