@@ -1,18 +1,79 @@
+# Re-run code after kernel reset to regenerate the HTML file
+html_content = """
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PPC Co-Pilot</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPC Co-Pilot | AI-Powered Amazon Ads Optimization</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            color: #1a73e8;
+        }
+        .features {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .features ul {
+            padding-left: 1.2rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 2rem;
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 2rem;">
-  <h1>PPC Co-Pilot</h1>
-  <p>PPC Co-Pilot is an AI-powered platform designed to help Amazon sellers automate and optimize their Sponsored Ads campaigns using real-time performance data and GPT analysis.</p>
-  <ul>
-    <li>Analyze keywords and search terms</li>
-    <li>Get GPT-4 suggestions for bid changes</li>
-    <li>One-click optimization</li>
-  </ul>
-  <p>Coming soon – stay tuned!</p>
+<body>
+    <header>
+        <h1>PPC Co-Pilot</h1>
+        <p><em>Your AI assistant for Amazon PPC success.</em></p>
+    </header>
+    <section class="features">
+        <h2>🚀 What We Do</h2>
+        <p>PPC Co-Pilot is an AI-powered platform designed to help Amazon sellers automate and optimize their Sponsored Ads campaigns using real-time performance data and GPT analysis.</p>
+        <ul>
+            <li>✅ AI-generated bid and keyword optimization suggestions</li>
+            <li>✅ Real-time campaign performance tracking</li>
+            <li>✅ One-click implementation of changes</li>
+            <li>✅ Weekly insights reports straight to your inbox</li>
+        </ul>
+        <a href="#" class="button">Coming Soon</a>
+    </section>
+    <footer>
+        &copy; 2025 PPC Co-Pilot. All rights reserved.
+    </footer>
 </body>
 </html>
+"""
+
+# Save the HTML file
+file_path = "/mnt/data/index.html"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+file_path
